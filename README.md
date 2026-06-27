@@ -80,6 +80,33 @@ returns, a weak contrarian effect explaining < 6% of variance), which with
 multiple-comparison caution is not a tradeable edge. Net: the news/attention
 trend does not forecast NSE returns — consistent with the rest of this repo.
 
+### Fundamentals & earnings surprises
+
+`fundamentals.py` tests whether company financials drive price outcomes, via
+yfinance data:
+
+**Earnings-surprise event study** — for each quarterly earnings date, the price
+reaction (close-before → close-after) vs the EPS surprise %, pooled across all
+5 stocks (n = 120 events):
+
+| Relationship | Pearson r | p-value |
+|---|---|---|
+| EPS surprise → 1-day reaction | **+0.18** | 0.055 (marginal) |
+| EPS surprise → 3-day reaction | +0.13 | 0.15 |
+
+There is a weak, *directionally sensible* effect — bigger EPS beats produce
+bigger up-moves — but it explains only ~3% of the reaction variance and is only
+borderline significant. Every individual stock shows the same positive sign
+(r = 0.12–0.32), none individually significant. This is the **clearest
+fundamental→price link in the whole repo**, and it is still small.
+
+**Cross-section (n = 5)** — current valuation/quality vs realized 2y return:
+correlations are large in magnitude but statistically meaningless at n = 5, and
+several have *counterintuitive* signs (e.g. ROE vs return r = −0.77: the
+high-ROE IT names TCS and INFY fell hardest as the sector de-rated). Takeaway:
+strong fundamentals did **not** translate into strong returns over this window —
+sector/regime moves dominated.
+
 ## Run it
 
 ```bash
@@ -87,6 +114,7 @@ pip install -r requirements.txt
 python run_experiment.py     # deep RL on daily data (PPO+A2C x seeds x stocks)
 python run_intraday.py       # deep RL on 1h data + validation-based selection
 python news_trend.py         # Google Trends attention vs returns correlation
+python fundamentals.py       # earnings-surprise event study + valuation cross-section
 ```
 
 Market data is downloaded from Yahoo Finance and cached under `data/`
@@ -101,6 +129,7 @@ Market data is downloaded from Yahoo Finance and cached under `data/`
 | `run_experiment.py` | Daily DRL training + out-of-sample evaluation across seeds |
 | `run_intraday.py` | 1h DRL training with validation-based model selection |
 | `news_trend.py` | Google Trends attention vs returns correlation (lead/lag) |
+| `fundamentals.py` | Earnings-surprise event study + valuation cross-section |
 | `results/` | Saved metrics (JSON) |
 
 ## Disclaimer

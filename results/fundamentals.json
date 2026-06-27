@@ -1,0 +1,146 @@
+{
+  "snapshot": {
+    "RELIANCE.NS": {
+      "trailingPE": 22.048233,
+      "priceToBook": 1.9706757,
+      "returnOnEquity": 0.09139,
+      "debtToEquity": 36.653,
+      "profitMargins": 0.0764,
+      "revenueGrowth": 0.125,
+      "earningsGrowth": -0.126,
+      "dividendYield": 0.46
+    },
+    "ICICIBANK.NS": {
+      "trailingPE": 18.54526,
+      "priceToBook": 2.7357757,
+      "returnOnEquity": 0.16359,
+      "debtToEquity": null,
+      "profitMargins": 0.24929,
+      "revenueGrowth": 0.669,
+      "earningsGrowth": 0.084,
+      "dividendYield": 0.79
+    },
+    "LT.NS": {
+      "trailingPE": 35.979965,
+      "priceToBook": 5.289187,
+      "returnOnEquity": 0.16951999,
+      "debtToEquity": 97.64,
+      "profitMargins": 0.05515,
+      "revenueGrowth": 0.117,
+      "earningsGrowth": -0.345,
+      "dividendYield": 0.9
+    },
+    "TCS.NS": {
+      "trailingPE": 15.416697,
+      "priceToBook": 7.0711875,
+      "returnOnEquity": 0.48395002,
+      "debtToEquity": 10.389,
+      "profitMargins": 0.18429,
+      "revenueGrowth": 0.096,
+      "earningsGrowth": 0.122,
+      "dividendYield": 5.92
+    },
+    "INFY.NS": {
+      "trailingPE": 13.702536,
+      "priceToBook": 4.5546002,
+      "returnOnEquity": 0.31439,
+      "debtToEquity": 9.827,
+      "profitMargins": 0.16434999,
+      "revenueGrowth": 0.066,
+      "earningsGrowth": 0.118,
+      "dividendYield": 4.8
+    }
+  },
+  "earnings_event_study": {
+    "RELIANCE.NS": {
+      "n": 24,
+      "corr_surprise_vs_1d_react": [
+        0.136,
+        0.5253
+      ]
+    },
+    "ICICIBANK.NS": {
+      "n": 24,
+      "corr_surprise_vs_1d_react": [
+        0.319,
+        0.1287
+      ]
+    },
+    "LT.NS": {
+      "n": 24,
+      "corr_surprise_vs_1d_react": [
+        0.134,
+        0.5326
+      ]
+    },
+    "TCS.NS": {
+      "n": 24,
+      "corr_surprise_vs_1d_react": [
+        0.251,
+        0.236
+      ]
+    },
+    "INFY.NS": {
+      "n": 24,
+      "corr_surprise_vs_1d_react": [
+        0.119,
+        0.5802
+      ]
+    },
+    "POOLED": {
+      "n": 120,
+      "corr_surprise_vs_1d_react": [
+        0.176,
+        0.0548
+      ],
+      "corr_surprise_vs_3d_react": [
+        0.131,
+        0.1536
+      ]
+    }
+  },
+  "cross_section": {
+    "RELIANCE.NS": {
+      "trailingPE": 22.048233,
+      "earningsGrowth": -0.126,
+      "returnOnEquity": 0.09139,
+      "ret_2y": -0.119
+    },
+    "ICICIBANK.NS": {
+      "trailingPE": 18.54526,
+      "earningsGrowth": 0.084,
+      "returnOnEquity": 0.16359,
+      "ret_2y": 0.158
+    },
+    "LT.NS": {
+      "trailingPE": 35.979965,
+      "earningsGrowth": -0.345,
+      "returnOnEquity": 0.16951999,
+      "ret_2y": 0.193
+    },
+    "TCS.NS": {
+      "trailingPE": 15.416697,
+      "earningsGrowth": 0.122,
+      "returnOnEquity": 0.48395002,
+      "ret_2y": -0.417
+    },
+    "INFY.NS": {
+      "trailingPE": 13.702536,
+      "earningsGrowth": 0.118,
+      "returnOnEquity": 0.31439,
+      "ret_2y": -0.281
+    },
+    "corr_PE_vs_ret2y": [
+      0.718,
+      0.172
+    ],
+    "corr_earningsGrowth_vs_ret2y": [
+      -0.624,
+      0.2608
+    ],
+    "corr_ROE_vs_ret2y": [
+      -0.769,
+      0.1288
+    ]
+  }
+}
