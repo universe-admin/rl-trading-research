@@ -56,12 +56,37 @@ validation Sharpe failed to predict test returns (e.g. the best-validation
 models on RELIANCE-A2C and TCS-PPO both *lost* money out-of-sample). See
 `results/` and the run logs for full numbers.
 
+### News / attention-trend correlation
+
+True historical news-sentiment series for NSE names are not freely available,
+so `news_trend.py` uses **Google Trends search interest** (geo: India) as a
+proxy for the "news / attention trend" and correlates weekly changes in
+attention against weekly returns — 259 weeks (~5 years) per stock.
+
+Pearson r (change in attention vs return); **bold = statistically significant (p < 0.05)**:
+
+| Stock | Same week | Predicts next week (lead) | Follows price (reverse) |
+|---|---|---|---|
+| RELIANCE | +0.05 | +0.11 | +0.01 |
+| ICICIBANK | −0.05 | +0.09 | −0.03 |
+| LT | −0.04 | +0.07 | +0.05 |
+| TCS | +0.01 | +0.10 | −0.01 |
+| INFY | **+0.13** | **−0.24** | +0.05 |
+
+For 4 of 5 stocks, attention has **no statistically significant link** to
+returns in any direction. Only INFY shows a significant *predictive*
+correlation — and it is **negative** (attention spikes precede slightly weaker
+returns, a weak contrarian effect explaining < 6% of variance), which with
+multiple-comparison caution is not a tradeable edge. Net: the news/attention
+trend does not forecast NSE returns — consistent with the rest of this repo.
+
 ## Run it
 
 ```bash
 pip install -r requirements.txt
 python run_experiment.py     # deep RL on daily data (PPO+A2C x seeds x stocks)
 python run_intraday.py       # deep RL on 1h data + validation-based selection
+python news_trend.py         # Google Trends attention vs returns correlation
 ```
 
 Market data is downloaded from Yahoo Finance and cached under `data/`
@@ -75,6 +100,7 @@ Market data is downloaded from Yahoo Finance and cached under `data/`
 | `trading_env.py` | Gymnasium trading env (long/flat/short, costs, Differential Sharpe reward) + evaluation |
 | `run_experiment.py` | Daily DRL training + out-of-sample evaluation across seeds |
 | `run_intraday.py` | 1h DRL training with validation-based model selection |
+| `news_trend.py` | Google Trends attention vs returns correlation (lead/lag) |
 | `results/` | Saved metrics (JSON) |
 
 ## Disclaimer

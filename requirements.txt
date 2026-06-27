@@ -6,3 +6,4 @@ yfinance
 gymnasium
 torch
 stable-baselines3
+pytrends

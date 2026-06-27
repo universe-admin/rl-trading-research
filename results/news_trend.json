@@ -1,0 +1,97 @@
+{
+  "RELIANCE.NS": {
+    "n_weeks": 259,
+    "corr_dtrend_vs_return_same_week": [
+      0.05,
+      0.4259
+    ],
+    "corr_dtrend_vs_abs_return_same_week": [
+      -0.077,
+      0.216
+    ],
+    "corr_dtrend_predicts_next_return (lead)": [
+      0.113,
+      0.0697
+    ],
+    "corr_return_predicts_next_dtrend (reverse)": [
+      0.009,
+      0.8857
+    ]
+  },
+  "ICICIBANK.NS": {
+    "n_weeks": 259,
+    "corr_dtrend_vs_return_same_week": [
+      -0.049,
+      0.4369
+    ],
+    "corr_dtrend_vs_abs_return_same_week": [
+      -0.031,
+      0.6175
+    ],
+    "corr_dtrend_predicts_next_return (lead)": [
+      0.085,
+      0.1743
+    ],
+    "corr_return_predicts_next_dtrend (reverse)": [
+      -0.032,
+      0.6134
+    ]
+  },
+  "LT.NS": {
+    "n_weeks": 259,
+    "corr_dtrend_vs_return_same_week": [
+      -0.038,
+      0.5452
+    ],
+    "corr_dtrend_vs_abs_return_same_week": [
+      -0.042,
+      0.4987
+    ],
+    "corr_dtrend_predicts_next_return (lead)": [
+      0.071,
+      0.2545
+    ],
+    "corr_return_predicts_next_dtrend (reverse)": [
+      0.047,
+      0.45
+    ]
+  },
+  "TCS.NS": {
+    "n_weeks": 259,
+    "corr_dtrend_vs_return_same_week": [
+      0.012,
+      0.8478
+    ],
+    "corr_dtrend_vs_abs_return_same_week": [
+      -0.077,
+      0.2183
+    ],
+    "corr_dtrend_predicts_next_return (lead)": [
+      0.1,
+      0.108
+    ],
+    "corr_return_predicts_next_dtrend (reverse)": [
+      -0.005,
+      0.9396
+    ]
+  },
+  "INFY.NS": {
+    "n_weeks": 259,
+    "corr_dtrend_vs_return_same_week": [
+      0.132,
+      0.034
+    ],
+    "corr_dtrend_vs_abs_return_same_week": [
+      -0.204,
+      0.001
+    ],
+    "corr_dtrend_predicts_next_return (lead)": [
+      -0.238,
+      0.0001
+    ],
+    "corr_return_predicts_next_dtrend (reverse)": [
+      0.048,
+      0.4425
+    ]
+  }
+}
